@@ -1,0 +1,26 @@
+/**
+* @file:   sound_info.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package TableProto;
+
+message sound_info{
+    /** 声音ID */
+    required int32 ID = 1 [default = 0];
+    /** 是否可操作 */
+    optional int32 operate_type = 2 [default = 0];
+    /** 路径 */
+    optional string path = 3 [default = ""];
+    /** 名字 */
+    optional string name = 4 [default = ""];
+    /** 描述 */
+    optional string describe = 5 [default = ""];
+    /** 所属场景 */
+    optional int32 affiliation_scene = 6 [default = 0];
+}
+
+message sound_info_ARRAY {
+    repeated sound_info items = 1;
+}

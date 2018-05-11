@@ -1,0 +1,60 @@
+/**
+* @file:   hero_info.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package TableProto;
+
+message HERO_INFO{
+    /** 武将id */
+    required int32 ID = 1 [default = 0];
+    /** 武将资源 */
+    optional string hero_res = 2 [default = ""];
+    /** 武将名 */
+    optional string name = 3 [default = ""];
+    /** 性别
+        不限制：100
+        male：101
+        female：102
+    */
+    optional int32 sex = 4 [default = 0];
+    /** 武将类型
+        不限制：200
+        武将：201
+        文官：202
+    */
+    optional int32 type = 5 [default = 0];
+    /** 武将阵营
+        群雄：300
+        魏国：301
+        吴国：302
+        蜀国：303
+    */
+    optional int32 camp = 6 [default = 0];
+    /** 品质
+        绿色：1
+        蓝色：2
+        紫色：3
+        橙色：4
+    */
+    optional int32 quality = 7 [default = 0];
+    /** 角色等级上限 */
+    optional int32 level_max = 8 [default = 0];
+    /** 武将头像 */
+    optional string hero_icon = 9 [default = ""];
+    /** 普攻技能id */
+    optional string attack_skill = 10 [default = ""];
+    /** 被动技能id */
+    optional string passive_skill = 11 [default = ""];
+    /** 小技能id */
+    optional string skill = 12 [default = ""];
+    /** 大招技能id */
+    optional string ultimate_skill = 13 [default = ""];
+    /** 武将说明 */
+    optional string description = 14 [default = ""];
+}
+
+message HERO_INFO_ARRAY {
+    repeated HERO_INFO items = 1;
+}

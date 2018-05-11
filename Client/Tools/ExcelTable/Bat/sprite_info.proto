@@ -1,0 +1,98 @@
+/**
+* @file:   sprite_info.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package TableProto;
+
+message sprite_info{
+    /** 物体id */
+    required int32 ID = 1 [default = 0];
+    /** 路径 */
+    optional string path = 2 [default = ""];
+    /** 名字 */
+    optional string name = 3 [default = ""];
+    /** 是否显示 */
+    optional int32 is_show = 4 [default = 0];
+    /** 事件类型 */
+    optional int32 event_type = 5 [default = 0];
+    /** 包围盒x大小 */
+    optional float box_size_x = 6 [default = 0];
+    /** 包围盒y大小 */
+    optional float box_size_y = 7 [default = 0];
+    /** 包围盒z大小 */
+    optional float box_size_z = 8 [default = 0];
+    /** 包围盒x位置 */
+    optional float box_pos_x = 9 [default = 0];
+    /** 包围盒y位置 */
+    optional float box_pos_y = 10 [default = 0];
+    /** 包围盒z位置 */
+    optional float box_pos_z = 11 [default = 0];
+    /** 原始位置x */
+    optional float orig_posi_x = 12 [default = 0];
+    /** 原始位置y */
+    optional float orig_posi_y = 13 [default = 0];
+    /** 原始位置z */
+    optional float orig_posi_z = 14 [default = 0];
+    /** 目标位置x */
+    optional float target_x = 15 [default = 0];
+    /** 目标位置y */
+    optional float target_y = 16 [default = 0];
+    /** 目标位置z */
+    optional float target_z = 17 [default = 0];
+    /** 图层级 */
+    optional int32 sorting_layer = 18 [default = 0];
+    /** 延迟多久播放s(秒) */
+    optional float pos_delay = 19 [default = 0];
+    /** 持续时间s(秒) */
+    optional float pos_dura = 20 [default = 0];
+    /** 移动动画类型(第二页说明) */
+    optional int32 pos_type = 21 [default = 0];
+    /** 退出时移动动画类型(第二页说明) */
+    optional int32 re_pos_type = 22 [default = 0];
+    /** 原始缩放X轴 */
+    optional float orig_scale_x = 23 [default = 0];
+    /** 原始缩放Y轴 */
+    optional float orig_scale_y = 24 [default = 0];
+    /** 原始缩放z轴 */
+    optional float orig_scale_z = 25 [default = 0];
+    /** 目标缩放X轴 */
+    optional float target_scale_x = 26 [default = 0];
+    /** 目标缩放Y轴 */
+    optional float target_scale_y = 27 [default = 0];
+    /** 目标缩放Z轴 */
+    optional float target_scale_z = 28 [default = 0];
+    /** 缩放动画延迟时间 */
+    optional float scale_delay = 29 [default = 0];
+    /** 缩放动画持续时间 */
+    optional float scale_drua = 30 [default = 0];
+    /** 缩放动画类型(第二页说明) */
+    optional int32 scale_type = 31 [default = 0];
+    /** 退出动画类型(第二页说明) */
+    optional int32 re_scale_type = 32 [default = 0];
+    /** 原始旋转X轴 */
+    optional float orig_rat_x = 33 [default = 0];
+    /** 原始旋转Y轴 */
+    optional float orig_rat_y = 34 [default = 0];
+    /** 原始旋转z轴 */
+    optional float orig_rat_z = 35 [default = 0];
+    /** 目标旋转X轴 */
+    optional float target_rat_x = 36 [default = 0];
+    /** 目标旋转Y轴 */
+    optional float target_rat_y = 37 [default = 0];
+    /** 目标旋转Z轴 */
+    optional float target_rat_z = 38 [default = 0];
+    /** 旋转动画延迟时间 */
+    optional float rat_delay = 39 [default = 0];
+    /** 旋转动画持续时间 */
+    optional float rat_drua = 40 [default = 0];
+    /** 旋转动画类型(第二页说明) */
+    optional int32 rat_type = 41 [default = 0];
+    /** 退出动画类型(第二页说明) */
+    optional int32 re_rat_type = 42 [default = 0];
+}
+
+message sprite_info_ARRAY {
+    repeated sprite_info items = 1;
+}

@@ -1,0 +1,26 @@
+/**
+* @file:   chapter_info.proto
+* @author: jameyli <jameyli AT tencent DOT com>
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+package TableProto;
+
+message chapter_info{
+    /** 章节id */
+    required int32 ID = 1 [default = 0];
+    /** 材质 */
+    optional string material = 2 [default = ""];
+    /** 路径 */
+    optional string path = 3 [default = ""];
+    /** 章节名字 */
+    optional string name = 4 [default = ""];
+    /** 章节类型(智慧星跟居家安全) */
+    optional string scene = 5 [default = ""];
+    /**  */
+    repeated int32 sprite = 6;
+}
+
+message chapter_info_ARRAY {
+    repeated chapter_info items = 1;
+}
