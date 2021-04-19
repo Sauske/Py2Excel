@@ -140,13 +140,12 @@ class SheetInterpreter:
         self._sheet_name = sheet_name
         try :
             self._workbook = xlrd.open_workbook(self._xls_file_path)
-        except BaseException, e :
-            print "open xls file(%s) failed!"%(self._xls_file_path)
-            raise
+        except BaseException as err :
+            print("open xls file(%s) failed!"%(self._xls_file_path))            
 
         try :
             self._sheet =self._workbook.sheet_by_name(self._sheet_name)
-        except BaseException, e :
+        except BaseException as err :
             print "open sheet(%s) failed!"%(self._sheet_name)
 
         # 行数和列数
@@ -197,7 +196,7 @@ class SheetInterpreter:
         try :
             command = "protoc --python_out=./ " + self._pb_file_name
             os.system(command)
-        except BaseException, e :
+        except BaseException as err :
             print "protoc failed!"
             raise
 
@@ -424,7 +423,9 @@ class SheetInterpreter:
     def _Write2File(self) :
         """输出到文件"""
         pb_file = open(self._pb_file_name, "w+")
-        pb_file.writelines(self._output)
+        #pb_file.writelines(self._output)
+        for op in self._output :
+            pb_file.write(op)
         pb_file.close()
 
 
@@ -436,13 +437,13 @@ class DataParser:
 
         try :
             self._workbook = xlrd.open_workbook(self._xls_file_path)
-        except BaseException, e :
+        except BaseException as err :
             print "open xls file(%s) failed!"%(self._xls_file_path)
             raise
 
         try :
             self._sheet =self._workbook.sheet_by_name(self._sheet_name)
-        except BaseException, e :
+        except BaseException as err:
             print "open sheet(%s) failed!"%(self._sheet_name)
             raise
 
@@ -455,9 +456,9 @@ class DataParser:
         try:
             self._module_name = self._sheet_name.lower() + "_pb2"
             sys.path.append(os.getcwd())
-            exec('from '+self._module_name + ' import *');
+            exec('from '+self._module_name + ' import *')
             self._module = sys.modules[self._module_name]
-        except BaseException, e :
+        except BaseException as err :
             print "load module(%s) failed"%(self._module_name)
             raise
 
@@ -680,7 +681,7 @@ class DataParser:
                     return field_value
             else :
                 return None
-        except BaseException, e :
+        except BaseException as err:
             print "parse cell(%u, %u) error, please check it, maybe type is wrong."%(row, col)
             raise
 
@@ -709,9 +710,9 @@ if __name__ == '__main__' :
             filename = filename.replace(".xls","")
             tool = SheetInterpreter(file, filename)
             tool.Interpreter()
-    except BaseException, e :
+    except BaseException as err :
         print "Interpreter Failed!!!"
-        print e
+        print err
         sys.exit(-3)
 
     print "Interpreter Success!!!"
@@ -724,7 +725,7 @@ if __name__ == '__main__' :
             filename = filename.replace(".xls","")
             parser = DataParser(file, filename)
             parser.Parse()
-    except BaseException, e :
+    except BaseException as err:
         print "Parse Failed!!!"
         print e
         sys.exit(-4)
