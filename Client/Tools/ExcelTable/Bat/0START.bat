@@ -20,8 +20,8 @@ copy *.proto ..\out\proto\
 
 @for /f %%a in  ('dir /b ..\out\proto\*.proto')  do ..\..\Protocol\pb_csharp_gen\protogen.exe -i:"%%a" -o:"..\out\config\%%~na.cs" 
 
-::copy ..\out\config\*.cs  ..\..\..\Assets\Scripts\Proto\Table
-::copy ..\out\data\*.bytes  ..\..\..\Assets\Resources\Databin\TableRes
+copy ..\out\config\*.cs  ..\..\..\Assets\Scripts\Proto\Table
+copy ..\out\data\*.bytes  ..\..\..\Assets\Resources\Databin\TableRes
 
 pause
 

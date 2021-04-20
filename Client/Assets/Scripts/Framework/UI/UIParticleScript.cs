@@ -170,16 +170,16 @@ public class UIParticleScript : UIComponent
 
     private void InitializeParticleScaler(GameObject gameObject, float scale)
     {
-        ParticleScaler particleScaler = gameObject.GetComponent<ParticleScaler>();
-        if (particleScaler == null)
-        {
-            particleScaler = gameObject.AddComponent<ParticleScaler>();
-        }
-        if (particleScaler.particleScale != scale)
-        {
-            particleScaler.particleScale = scale;
-            particleScaler.alsoScaleGameobject = false;
-            particleScaler.CheckAndApplyScale();
-        }
+        //ParticleScaler particleScaler = gameObject.GetComponent<ParticleScaler>();
+        //if (particleScaler == null)
+        //{
+        //    particleScaler = gameObject.AddComponent<ParticleScaler>();
+        //}
+        //if (particleScaler.particleScale != scale)
+        //{
+        //    particleScaler.particleScale = scale;
+        //    particleScaler.alsoScaleGameobject = false;
+        //    particleScaler.CheckAndApplyScale();
+        //}
     }
 }
